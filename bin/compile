@@ -17,6 +17,11 @@ echo "Running from $BUILD_DIR" | indent
 
 if [ -f $BUILD_DIR/webpack.config.js ]; then
 
+  if [ -d "$ENV_DIR" ]; then
+    echo "Exporting config vars to environment" | indent
+    export_env_dir $ENV_DIR
+  fi
+
   echo "Running webpack build (yarn run prod-build)" | indent
   yarn run prod-build
 
