@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+BUILD_DIR=$1
+CACHE_DIR=$2
+ENV_DIR=$3
+
+cd $BUILD_DIR
+echo "Running from $BUILD_DIR"
+
+if [ -f $BUILD_DIR/webpack.config.js ]; then
+
+  echo "Running webpack build (yarn run prod-build)"
+  yarn run prod-build
+
+  echo "Exporting I18n translations (bundle exec rake i18n:js:export)"
+  bundle exec rake i18n:js:export
+
+else
+  echo "No webpack config found"
+fi
