@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+indent() {
+  sed -u 's/^/       /'
+}
+
 BP_DIR=$(cd $(dirname $0); cd ..; pwd)
 
 BUILD_DIR=$1
@@ -9,16 +13,16 @@ ENV_DIR=$3
 source $BP_DIR/lib/common.sh
 
 cd $BUILD_DIR
-echo "Running from $BUILD_DIR"
+echo "Running from $BUILD_DIR" | indent
 
 if [ -f $BUILD_DIR/webpack.config.js ]; then
 
-  echo "Running webpack build (yarn run prod-build)"
+  echo "Running webpack build (yarn run prod-build)" | indent
   yarn run prod-build
 
-  echo "Exporting I18n translations (bundle exec rake i18n:js:export)"
+  echo "Exporting I18n translations (bundle exec rake i18n:js:export)" | indent
   bundle exec rake i18n:js:export
 
 else
-  echo "No webpack config found"
+  echo "No webpack config found" | indent
 fi
