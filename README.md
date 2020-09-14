@@ -1,6 +1,6 @@
 # Heroku Buildpack for avalanche
 
-This is a [Heroku buildpack](http://devcenter.heroku.com/articles/buildpacks) for [avalanche](https://github.com/abhchand/avalanche).
+This is a [Heroku buildpack](http://devcenter.heroku.com/articles/buildpacks) for [avalanche](https://github.com/callrail/avalanche).
 
 Runs the following:
 
@@ -10,5 +10,5 @@ Runs the following:
 ## Usage
 
 ```bash
-$ heroku config:set BUILDPACK_URL=https://github.com/abhchand/avalanche-heroku-buildpack
+$ heroku config:set BUILDPACK_URL=https://github.com/callrail/avalanche-heroku-buildpack
 ```
