@@ -1,3 +1,5 @@
+# AVALANCHE IS DEPRECATED
+
 # Heroku Buildpack for avalanche
 
 This is a [Heroku buildpack](http://devcenter.heroku.com/articles/buildpacks) for [avalanche](https://github.com/callrail/avalanche).
